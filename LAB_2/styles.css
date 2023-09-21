@@ -1,0 +1,150 @@
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-content img {
+    width: 50px;
+    margin-right: 10px;
+    display: inline; 
+    vertical-align: middle;
+}
+
+.header-content h1 {
+    font-size: 24px;
+    margin: 0;
+    display: inline; 
+    vertical-align: middle;
+}
+
+.header-link {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 20px; 
+}
+
+.header-link:hover {
+    color: #ff5733;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Bahnschrift Condensed", sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    overflow: hidden;
+}
+
+.sidebar {
+    flex: 1; 
+    max-width: 300px; 
+    background-color: #1c1c1c;
+    color: #fff;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.sidebar a:hover {
+    color: #ff5733; 
+}
+
+.content {
+    flex: 2;
+    padding: 20px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+}
+
+.image-item {
+    position: relative;
+}
+
+.image-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-item:hover img {
+    transform: scale(1.05);
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    margin-right: 20px; 
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column li {
+    margin-bottom: 5px;
+}
+
+.footer-column a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: #ff5733; 
+}
+
+
+
+
