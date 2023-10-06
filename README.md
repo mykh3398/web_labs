@@ -1,4 +1,4 @@
 # Labs on subject "Web-development"
-## Contributor: Kokhanchuk Mykhailo Mykolaiovych
-## Student of: IA-24, FICT
+## Contributors: Kokhanchuk Mykhailo Mykolaiovych, Kiiko Anna Oleksandrivna
+## Students of: IA-24, FICT
 
