@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Транслітерація</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">Транслітерація українського тексту</h1><br>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="ukrainianText">Український текст</label>
+                    <textarea id="ukrainianText" class="form-control" rows="4" placeholder="Введіть український текст"></textarea>
+                </div><br>
+                <div class="form-group">
+                    <label for="transliteratedText">Транслітерований текст</label>
+                    <textarea id="transliteratedText" class="form-control" rows="4" readonly></textarea>
+                </div><br>
+                <div class="d-flex justify-content-center align-items-center">
+                     <button class="btn btn-primary" onclick="transliterateText()">Транслітерувати</button>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function transliterateText() {
+            const ukrainianText = document.getElementById("ukrainianText").value;
+            const transliteratedText = transliterate(ukrainianText);
+            document.getElementById("transliteratedText").value = transliteratedText;
+        }
+
+        function transliterate(text) {
+            const transliterationRules = {
+                'а': 'a', 'б': 'b', 'в': 'v', 'г': 'h', 'д': 'd', 'е': 'e',
+                'є': 'ye', 'ж': 'zh', 'з': 'z', 'и': 'y', 'і': 'i', 'ї': 'yi',
+                'й': 'y', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o',
+                'п': 'p', 'р': 'r', 'с': 's', 'т': 't', 'у': 'u', 'ф': 'f',
+                'х': 'kh', 'ц': 'ts', 'ч': 'ch', 'ш': 'sh', 'щ': 'shch', 'ь': '',
+                'ю': 'yu', 'я': 'ya'
+            };
+            return text.split('').map(char => transliterationRules[char] || char).join('');
+        }
+    </script>
+</body>
+<footer class="text-center"> <a href="../index.html">На головну</a></footer>
+</html>

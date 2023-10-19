@@ -1,0 +1,24 @@
+<html>
+    <header>
+        <link rel="stylesheet" href="../css/styles.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>Розрахунок дня тижня</title>
+        <script src="./scripts/DayOfWeek.js"></script>
+        <script language="javascript">
+            <!--
+            function calcDayOfWeek(element) {
+                const dayOfWeek = DayOfWeek(element.value);
+                // Результат
+                document.getElementById("dayOfWeek").innerText = dayOfWeek + "-" + DaysOfWeek[2 * dayOfWeek + 3];
+            }
+            // --> 
+        </script>
+    </header>
+
+    <body class="calc">      
+        <p>Введіть дату народження: <input type="date" name="dateBorn" onchange="calcDayOfWeek(this)"></p> <br>
+        <p>День тижня: <span class="result" id="dayOfWeek">не визначено</span></p> <br>
+        <br><a href="../index.html">На головну</a>
+    </body>
+</html>

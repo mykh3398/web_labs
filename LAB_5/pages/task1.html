@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <link rel="stylesheet" href="../css/styles.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Розрахунок прямокутника</title>
+        <script language="javascript" src="./scripts/Rectangle.js"></script>
+        <script language="javascript">
+            <!--
+            function calc (obj) {
+// --------------------------------------------------------------------------------------
+// Якщо не виносити логіку в окремий клас
+                // // Перевірка значень на коректність
+                // const width = parseFloat(obj.a.value);
+                // const height = parseFloat(obj.b.value);
+                // console.log("width=", width, " height=", height);
+                // if (!(width > 0 && height > 0)) {
+                //     document.getElementById("perimetr").innerText = "Не визначено";
+                //     document.getElementById("square").innerText = "Не визначено";
+                //     document.getElementById("diagon").innerText = "Не визначено";
+                //     return;
+                // }
+
+                // // Периметр
+                // const p = 2 * (width + height);
+// --------------------------------------------------------------------------------------
+
+                // Створення об'єкту
+                const rect = new Rectangle(obj.a.value, obj.b.value);
+                // Периметр
+                const p = rect.perimetr();
+                // Площа
+                const s = rect.area();
+                // Діагональ
+                const d = rect.diag();
+
+                // Результат
+                document.getElementById("perimetr").innerText = p;
+                document.getElementById("area").innerText = s;
+                document.getElementById("diag").innerText = d;
+                
+            }
+            // --> 
+        </script>
+            
+    </header>
+
+    <body class="calc">
+        <form method="get" name="formCalc" onchange="calc(formCalc)">
+            <p>Довжина <input type="number" name="a" min="0" max="9999999999"/></p>
+            <p>Ширина  <input type="number" name="b" min="0" max="9999999999"/></p> <br>
+        </form>
+
+        <table><tr>
+            <td>Периметр: </td>
+            <td><span class="result" id="perimetr">не визначено</span></td>
+        </tr><tr>        
+            <td>Площа: </td>
+            <td><span class="result" id="area">не визначено</span></td>
+        </tr><tr>
+            <td>Довжина діагоналі: </td>
+            <td><span class="result" id="diag">не визначено</span></td>
+        </tr></table>
+        <br><a href="../index.html">На головну</a>
+    </body>
+</html>

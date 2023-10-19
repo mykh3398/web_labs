@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<header> 
+    <h1 class="text-center">Чат</h1>
+</header>
+
+<body>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="d-flex justify-content-center align-items-center">
+                    <input type="text" id="message" class="form-control mb-2" placeholder="Введіть повідомлення">
+                </div>
+                <div class="d-flex justify-content-center align-items-center mb-2">
+                    <button onclick="sendMessage(1)" class="btn btn-primary">User 1</button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="d-flex justify-content-center align-items-center ">
+                    <div id="chat"></div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="d-flex justify-content-center align-items-center mt-2">
+                    <input type="text" id="message2" class="form-control mb-2" placeholder="Введіть повідомлення">
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <button onclick="sendMessage(2)" class="btn btn-primary">User 2</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const chat = document.getElementById('chat');
+        const messageInput = document.getElementById('message');
+        const messageInput2 = document.getElementById('message2');
+
+        function sendMessage(user) {
+            const messageText = user === 1 ? messageInput.value : messageInput2.value;
+
+            if (messageText.trim() !== '') {
+                const messageBlock = document.createElement('div');
+                messageBlock.classList.add('message', `user${user}`);
+                messageBlock.innerHTML = `<strong><b>User ${user}</b></strong><br>${messageText}`;
+
+                chat.appendChild(messageBlock);
+                if (user === 1) {
+                    messageInput.value = '';
+                } else {
+                    messageInput2.value = '';
+                }
+                chat.scrollTop = chat.scrollHeight;
+            }
+        }
+    </script>
+</body>
+<footer class="text-center"> <a href="../index.html">На головну</a></footer>
+</html>
