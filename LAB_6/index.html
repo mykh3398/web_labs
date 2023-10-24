@@ -1,0 +1,241 @@
+<html>
+    <header>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration Page</title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>      
+  
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>        
+        <script type="text/javascript" src="./js/jquery.inputmask.js"></script>
+        <script type="text/javascript" src="./js/validation.data.js"></script>
+        <script type="text/javascript" src="./js/modification.table.js"></script>
+    </header>
+
+    <body>
+        <div class="card authorization-data">
+            <div class="card-header">
+                Registration data
+            </div>
+
+            <form class="needs-validation m-3" name="formRegistr" id="idFormRegistr" method="post">
+
+                <div class="mb-3">
+                    <label for="idEmail" class="form-label">Email address*</label>
+                    <input type="email" class="form-control" id="idEmail" name="email" placeholder="kk@example.com" required>
+                    <div class="invalid-feedback">
+                        Please enter valid email
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="idPassword" class="form-label">Password*</label>
+                    <input type="password" class="form-control" id="idPassword" name="password" minlength="5" required>
+                    <div class="invalid-feedback">
+                        Please enter valid password (length must be over 4 symbols)
+                    </div>            
+                </div>
+
+                <div class="mb-3">
+                    <label for="idLastName" class="form-label">Last Name*</label>
+                    <input type="text" class="form-control" id="idLastName" name="lastName" pattern="^[A-ZА-ЯЄЇІ][A-Za-zА-Яа-яЄєЇїІі\s]+$" required>
+                    <div class="invalid-feedback">
+                        Please enter valid last name: does not contain numbers, first letter is uppercase, min 2 symbols
+                    </div>            
+                </div>
+
+                <div class="mb-3">
+                    <label for="idFirstName" class="form-label">First Name*</label>
+                    <input type="text" class="form-control" id="idFirstName" name="firstName" pattern="^[A-ZА-ЯЄЇІ][A-Za-zА-Яа-яЄєЇїІі\s]*$" required>
+                    <div class="invalid-feedback">
+                        Please enter valid first name: does not contain numbers, first letter is uppercase
+                    </div>            
+                </div>
+
+                <div class="mb-3">
+                    <label for="idMiddleName" class="form-label">Middle Name*</label>
+                    <input type="text" class="form-control" id="idMiddleName" name="middleName" pattern="^[A-ZА-ЯЄЇІ][A-Za-zА-Яа-яЄєЇїІі\s]*$" required>
+                    <div class="invalid-feedback">
+                        Please enter valid middle name: does not contain numbers, first letter is uppercase
+                    </div>            
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadio" id="flexRadioMan" required>
+                    <label class="form-check-label" for="flexRadioMan">
+                      Man
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadio" id="flexRadioWoman" required>
+                    <label class="form-check-label" for="flexRadioWoman">
+                      Woman
+                    </label>
+                    <div class="invalid-feedback">
+                        Make choose
+                    </div>                      
+                </div>
+                  
+                <div class="mb-3">
+                    <label for="idBirthday" class="form-label">Birthday*</label>
+                    <input type="date" class="form-control" id="idBirthday" name="birthday" pattern="\d{2}.\d{2}.\d{4}" required>
+                    <div class="invalid-feedback">
+                        Please enter valid birthday
+                    </div>            
+                </div>
+
+                <div class="mb-3">
+                    <label for="idPhone" class="form-label">Phone number*</label>
+                    <input type="text" class="form-control" id="idPhone" name="phone"  
+                        placeholder="+38(0__) ___-__-__" pattern="^\+38\(0\d{2}\)\s\d{3}[\-]\d{2}[\-]\d{2}$" required>
+                    <div class="invalid-feedback">
+                        Please enter phone number
+                    </div>            
+                </div>
+                
+                <div class="mb-3">
+                    <label for="idGroup" class="form-label">Blood Type*</label>
+                    <select class="form-control" id="idGroup" name="group" required>
+                        <option></option>
+                        <option>O(I)</option>
+                        <option>A(II)</option>
+                        <option>B(III)</option>
+                        <option>AB(IV)</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select group
+                    </div>            
+                </div>
+
+                <div class="mb-3">
+                    <input type="file" class="form-control" id="idFile" name="addFile" accept="image/*, .doc,.docx">       
+                    <div class="invalid-feedback">
+                        Please select file (image/*, .doc,.docx)
+                    </div>                 
+                </div>
+                
+                <button type="button" name="signUp" class="btn btn-primary" onclick="onSignUp(formRegistr)" disabled>
+                    Sign Up
+                </button>
+                <button type="reset" name="cancel" class="btn btn-secondary" disabled>
+                    Cancel
+                </button>
+
+            </form>
+        </div>
+
+        <form id="idFormTable" name="formTable">
+            <div class="container mt-1">
+                <h3 class="text-center mb-2">Sign In data
+                    <button type="button" name="copy" class="btn btn-success" disabled onclick="onActionRows(formTable, 1)">
+                        <i class="fa-solid fa-copy"></i> Copy
+                    </button>
+                    <button type="button" name="del" class="btn btn-danger" disabled onclick="onActionRows(formTable, 2)">
+                        <i class="fa-solid fa-delete-left"></i> Del
+                    </button>
+                </h3>
+                <div class="table-responsive">
+                    <table id="idDataTable" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Select</th>
+                                <th>Email</th>
+                                <th>Last Name</th>
+                                <th>First Name</th>
+                                <th>Middle Name</th>
+                                <th>M/W</th>
+                                <th>Date birthday</th>                            
+                                <th>Phone</th>                        
+                                <th>Blood Type</th>                         
+                                <th>File</th>                         
+                            </tr>
+                        </thead>
+                        <tbody id="idDataTableBody">
+                            <!-- <tr>
+                                <td>                        
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                </td>
+                                <td>a@gmail.com</td>
+                                <td>Ivanov</td>
+                                <td>Ivan</td>
+                                <td>Ivanovich</td>
+                                <td>M</td>
+                                <td>2023-10-11</td>                            
+                                <td>+38(050) -111-11-11</td>                        
+                                <td>A1</td>                         
+                                <td>File</td>                         
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+  
+        </form> 
+
+        <script>
+
+            jQuery(() => {
+
+                // ----------------------------------------------------------------------
+                const formRegister = document.querySelector("#idFormRegistr"); 
+
+                // У форми реєстрації обираємо дочірні елементи вводу (можна 2 варіантами)
+                // let childNodes = form.querySelectorAll("input, select, textarea");            
+                const childNodes = $("input, select, textarea", formRegister);  
+                // Обробники подій change, input  
+                childNodes.on('change', (event) => checkValidation(event));
+                childNodes.on('input', (event) => resetClassList(event.currentTarget));
+
+                const phone = $("#idPhone");
+                phone.inputmask({"mask": "+38(099) 999-99-99"});
+                phone.on('blur', (event) => checkValidation(event));
+
+                const birthday = $("#idBirthday");
+                birthday.attr("max", dateFormat(new Date()));
+                birthday.on('blur', (event) => checkValidation(event));
+
+                // Для форми реєстрації в цілому визначаємо обробник події reset
+                formRegister.addEventListener('reset', () => {
+                    
+                    // робимо кнопку Sign Up disabled
+                    formRegister.signUp.disabled = true;    
+                    // робимо кнопку Cancel disabled
+                    formRegister.cancel.disabled = true;                        
+                    // У елементів форми вилучаємо стилі перевірок
+                    let childNodes = $("input, select, textarea", formRegister);                
+                    Array.from(childNodes).forEach((node) => resetClassList(node)); 
+                    
+                }, false);
+                
+                // Для форми реєстрації в цілому визначаємо обробник події change
+                formRegister.addEventListener('change', () => {
+
+                    // кнопка SignUp доступна, якщо вся форма валідна
+                    formRegister.signUp.disabled = !formRegister.checkValidity();    
+                    // робимо кнопку Cancel доступною
+                    if (formRegister.cancel.disabled)
+                        formRegister.cancel.disabled = false;     
+
+                }, false);
+
+                // ----------------------------------------------------------------------
+                let formTable = document.querySelector("#idFormTable"); 
+
+                // Для форми з табличними даними визначаємо обробник події change
+                formTable.addEventListener('change', () => {
+                    // Обираємо всі елементи "відчекані"
+                    let checkboxes = $("input[type=checkbox]:checked", '#idDataTableBody');
+                    // кнопки Copy, Del недоступні, якщо немає відмічених рядків
+                    formTable.copy.disabled = formTable.del.disabled = checkboxes.length === 0;
+                }, false);
+
+            })
+            
+
+        </script>
+    </body>
+</html>
